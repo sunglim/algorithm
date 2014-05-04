@@ -7,23 +7,23 @@ namespace counting_inversion
 {
     class Program
     {
-        public int InversionCounting  = 0;
-        private int[] unordered;
-        public Program(int[] list)
+        public long InversionCounting  = 0;
+        private long[] unordered;
+        public Program(long[] list)
         {
             unordered = list;
         }
-        public void MergeSort(int from, int to) {
+        public void MergeSort(long from, long to) {
             if ( (to - from) > 0) {
                 Console.WriteLine("FROM: " + from + "  TO: " + to);
-                List<int> tempList = new List<int>();
+                List<long> tempList = new List<long>();
 
-                int mid = (to + from) / 2;
+                long mid = (to + from) / 2;
                 MergeSort(from, mid);
                 MergeSort(mid + 1, to);
 
-                int leftPivot = from;
-                int rightPivot = mid + 1;
+                long leftPivot = from;
+                long rightPivot = mid + 1;
                 while (leftPivot < mid+1 && rightPivot < to +1)
                 {
                     if (unordered[leftPivot] < unordered[rightPivot])
@@ -44,7 +44,7 @@ namespace counting_inversion
                 {
                     tempList.Add(unordered[rightPivot++]);
                 }
-                int index = from;
+                long index = from;
                 foreach(int i in tempList) {
                     unordered[index++] = i;
                 }
@@ -60,16 +60,16 @@ namespace counting_inversion
 
         static void Main(string[] args)
         {
-            List<int> mylist = new List<int>();
+            List<long> mylist = new List<long>();
             string line;
             System.IO.StreamReader file = new System.IO.StreamReader("IntegerArray.txt");
             //System.IO.StreamReader file = new System.IO.StreamReader("small.txt");
             while ((line = file.ReadLine()) != null) {
-                mylist.Add(Convert.ToInt32(line.Trim()));
+                mylist.Add(Convert.ToInt64(line.Trim()));
             }
             file.Close();
             
-            Program program = new Program(mylist.ToArray<int>());
+            Program program = new Program(mylist.ToArray<long>());
             program.MergeSort(0, mylist.Count -1 /*index*/);
             program.Print();
 
