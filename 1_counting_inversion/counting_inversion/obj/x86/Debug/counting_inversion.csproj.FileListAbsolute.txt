@@ -1,0 +1,4 @@
+D:\program_store\algorithm_class\counting_inversion\counting_inversion\bin\Debug\counting_inversion.exe
+D:\program_store\algorithm_class\counting_inversion\counting_inversion\bin\Debug\counting_inversion.pdb
+D:\program_store\algorithm_class\counting_inversion\counting_inversion\obj\x86\Debug\counting_inversion.exe
+D:\program_store\algorithm_class\counting_inversion\counting_inversion\obj\x86\Debug\counting_inversion.pdb
